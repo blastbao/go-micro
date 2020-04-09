@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/micro/go-micro/v2/api"
+	"github.com/blastbao/go-micro/api"
 )
 
 func TestSetNamespace(t *testing.T) {

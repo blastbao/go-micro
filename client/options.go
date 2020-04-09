@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/micro/go-micro/v2/broker"
-	"github.com/micro/go-micro/v2/client/selector"
-	"github.com/micro/go-micro/v2/codec"
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/transport"
+	"github.com/blastbao/go-micro/broker"
+	"github.com/blastbao/go-micro/client/selector"
+	"github.com/blastbao/go-micro/codec"
+	"github.com/blastbao/go-micro/registry"
+	"github.com/blastbao/go-micro/transport"
 )
 
 type Options struct {
@@ -86,6 +86,8 @@ type RequestOptions struct {
 }
 
 func NewOptions(options ...Option) Options {
+
+	// default options
 	opts := Options{
 		Context:     context.Background(),
 		ContentType: DefaultContentType,
@@ -105,6 +107,7 @@ func NewOptions(options ...Option) Options {
 		Transport: transport.DefaultTransport,
 	}
 
+	// apply options
 	for _, o := range options {
 		o(&opts)
 	}

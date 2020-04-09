@@ -52,6 +52,8 @@ func Get(ctx context.Context, key string) (string, bool) {
 
 // FromContext returns metadata from the given context
 func FromContext(ctx context.Context) (Metadata, bool) {
+
+
 	md, ok := ctx.Value(metaKey{}).(Metadata)
 	if !ok {
 		return nil, ok

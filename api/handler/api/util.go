@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"strings"
 
-	api "github.com/micro/go-micro/v2/api/proto"
-	"github.com/micro/go-micro/v2/client/selector"
-	"github.com/micro/go-micro/v2/registry"
+	api "github.com/blastbao/go-micro/api/proto"
+	"github.com/blastbao/go-micro/client/selector"
+	"github.com/blastbao/go-micro/registry"
 )
 
 func requestToProto(r *http.Request) (*api.Request, error) {

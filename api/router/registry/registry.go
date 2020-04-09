@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/micro/go-micro/v2/api"
-	"github.com/micro/go-micro/v2/api/router"
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/registry/cache"
+	"github.com/blastbao/go-micro/api"
+	"github.com/blastbao/go-micro/api/router"
+	"github.com/blastbao/go-micro/registry"
+	"github.com/blastbao/go-micro/registry/cache"
 )
 
 // router is the default router

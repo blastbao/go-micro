@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/micro/go-micro/v2/api/handler"
-	"github.com/micro/go-micro/v2/broker"
-	log "github.com/micro/go-micro/v2/logger"
+	"github.com/blastbao/go-micro/api/handler"
+	"github.com/blastbao/go-micro/broker"
+	log "github.com/blastbao/go-micro/logger"
 )
 
 const (

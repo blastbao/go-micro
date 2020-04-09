@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/micro/go-micro/v2/auth"
-	"github.com/micro/go-micro/v2/metadata"
+	"github.com/blastbao/go-micro/auth"
+	"github.com/blastbao/go-micro/metadata"
 )
 
 func TestWrapper(t *testing.T) {

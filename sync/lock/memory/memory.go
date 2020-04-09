@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	lock "github.com/micro/go-micro/v2/sync/lock"
+	lock "github.com/blastbao/go-micro/sync/lock"
 )
 
 type memoryLock struct {

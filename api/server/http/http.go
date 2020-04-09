@@ -9,8 +9,8 @@ import (
 	"sync"
 
 	"github.com/gorilla/handlers"
-	"github.com/micro/go-micro/v2/api/server"
-	log "github.com/micro/go-micro/v2/logger"
+	"github.com/blastbao/go-micro/api/server"
+	log "github.com/blastbao/go-micro/logger"
 )
 
 type httpServer struct {

@@ -3,10 +3,10 @@ package service
 import (
 	"context"
 
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/config/source"
-	proto "github.com/micro/go-micro/v2/config/source/service/proto"
-	log "github.com/micro/go-micro/v2/logger"
+	"github.com/blastbao/go-micro/client"
+	"github.com/blastbao/go-micro/config/source"
+	proto "github.com/blastbao/go-micro/config/source/service/proto"
+	log "github.com/blastbao/go-micro/logger"
 )
 
 var (

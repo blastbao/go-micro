@@ -2,8 +2,8 @@
 package static
 
 import (
-	"github.com/micro/go-micro/v2/client/selector"
-	"github.com/micro/go-micro/v2/registry"
+	"github.com/blastbao/go-micro/client/selector"
+	"github.com/blastbao/go-micro/registry"
 )
 
 // staticSelector is a static selector

@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/micro/go-micro/v2/auth"
-	"github.com/micro/go-micro/v2/errors"
-	"github.com/micro/go-micro/v2/store"
+	"github.com/blastbao/go-micro/auth"
+	"github.com/blastbao/go-micro/errors"
+	"github.com/blastbao/go-micro/store"
 )
 
 type Auth struct {

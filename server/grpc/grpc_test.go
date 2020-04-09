@@ -6,18 +6,18 @@ import (
 	"testing"
 
 	"github.com/micro/go-micro/v2"
-	bmemory "github.com/micro/go-micro/v2/broker/memory"
-	"github.com/micro/go-micro/v2/client"
-	gcli "github.com/micro/go-micro/v2/client/grpc"
-	"github.com/micro/go-micro/v2/errors"
-	rmemory "github.com/micro/go-micro/v2/registry/memory"
-	"github.com/micro/go-micro/v2/server"
-	gsrv "github.com/micro/go-micro/v2/server/grpc"
-	tgrpc "github.com/micro/go-micro/v2/transport/grpc"
+	bmemory "github.com/blastbao/go-micro/broker/memory"
+	"github.com/blastbao/go-micro/client"
+	gcli "github.com/blastbao/go-micro/client/grpc"
+	"github.com/blastbao/go-micro/errors"
+	rmemory "github.com/blastbao/go-micro/registry/memory"
+	"github.com/blastbao/go-micro/server"
+	gsrv "github.com/blastbao/go-micro/server/grpc"
+	tgrpc "github.com/blastbao/go-micro/transport/grpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/status"
 
-	pb "github.com/micro/go-micro/v2/server/grpc/proto"
+	pb "github.com/blastbao/go-micro/server/grpc/proto"
 )
 
 // server is used to implement helloworld.GreeterServer.

@@ -12,8 +12,8 @@ import (
 	"path"
 	"strings"
 
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/util/kubernetes/api"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/util/kubernetes/api"
 )
 
 var (

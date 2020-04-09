@@ -6,9 +6,9 @@ import (
 	"strings"
 	"sync"
 
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/util/kubernetes/client"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/registry"
+	"github.com/blastbao/go-micro/util/kubernetes/client"
 )
 
 type k8sWatcher struct {

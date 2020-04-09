@@ -6,10 +6,10 @@ import (
 	"sync"
 	"time"
 
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/runtime/local/build"
-	"github.com/micro/go-micro/v2/runtime/local/process"
-	proc "github.com/micro/go-micro/v2/runtime/local/process/os"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/runtime/local/build"
+	"github.com/blastbao/go-micro/runtime/local/process"
+	proc "github.com/blastbao/go-micro/runtime/local/process/os"
 )
 
 type service struct {

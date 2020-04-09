@@ -16,12 +16,12 @@ import (
 
 	"github.com/micro/cli/v2"
 	"github.com/micro/go-micro/v2"
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/registry"
-	maddr "github.com/micro/go-micro/v2/util/addr"
-	mhttp "github.com/micro/go-micro/v2/util/http"
-	mnet "github.com/micro/go-micro/v2/util/net"
-	mls "github.com/micro/go-micro/v2/util/tls"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/registry"
+	maddr "github.com/blastbao/go-micro/util/addr"
+	mhttp "github.com/blastbao/go-micro/util/http"
+	mnet "github.com/blastbao/go-micro/util/net"
+	mls "github.com/blastbao/go-micro/util/tls"
 )
 
 type service struct {

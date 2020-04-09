@@ -6,7 +6,7 @@ import (
 	gotime "time"
 
 	"github.com/beevik/ntp"
-	"github.com/micro/go-micro/v2/sync/time"
+	"github.com/blastbao/go-micro/sync/time"
 )
 
 type ntpTime struct {

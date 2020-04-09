@@ -5,11 +5,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/micro/go-micro/v2/config/loader"
-	"github.com/micro/go-micro/v2/config/loader/memory"
-	"github.com/micro/go-micro/v2/config/reader"
-	"github.com/micro/go-micro/v2/config/reader/json"
-	"github.com/micro/go-micro/v2/config/source"
+	"github.com/blastbao/go-micro/config/loader"
+	"github.com/blastbao/go-micro/config/loader/memory"
+	"github.com/blastbao/go-micro/config/reader"
+	"github.com/blastbao/go-micro/config/reader/json"
+	"github.com/blastbao/go-micro/config/source"
 )
 
 type config struct {

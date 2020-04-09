@@ -6,14 +6,14 @@ package go_micro_network
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/micro/go-micro/v2/router/service/proto"
+	_ "github.com/blastbao/go-micro/router/service/proto"
 	math "math"
 )
 
 import (
 	context "context"
-	client "github.com/micro/go-micro/v2/client"
-	server "github.com/micro/go-micro/v2/server"
+	client "github.com/blastbao/go-micro/client"
+	server "github.com/blastbao/go-micro/server"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

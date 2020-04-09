@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/micro/go-micro/v2/store"
-	ckv "github.com/micro/go-micro/v2/store/etcd"
-	lock "github.com/micro/go-micro/v2/sync/lock/etcd"
+	"github.com/blastbao/go-micro/store"
+	ckv "github.com/blastbao/go-micro/store/etcd"
+	lock "github.com/blastbao/go-micro/sync/lock/etcd"
 )
 
 type syncMap struct {

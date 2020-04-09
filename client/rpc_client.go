@@ -8,16 +8,16 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/micro/go-micro/v2/broker"
-	"github.com/micro/go-micro/v2/client/selector"
-	"github.com/micro/go-micro/v2/codec"
-	raw "github.com/micro/go-micro/v2/codec/bytes"
-	"github.com/micro/go-micro/v2/errors"
-	"github.com/micro/go-micro/v2/metadata"
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/transport"
-	"github.com/micro/go-micro/v2/util/buf"
-	"github.com/micro/go-micro/v2/util/pool"
+	"github.com/blastbao/go-micro/broker"
+	"github.com/blastbao/go-micro/client/selector"
+	"github.com/blastbao/go-micro/codec"
+	raw "github.com/blastbao/go-micro/codec/bytes"
+	"github.com/blastbao/go-micro/errors"
+	"github.com/blastbao/go-micro/metadata"
+	"github.com/blastbao/go-micro/registry"
+	"github.com/blastbao/go-micro/transport"
+	"github.com/blastbao/go-micro/util/buf"
+	"github.com/blastbao/go-micro/util/pool"
 )
 
 type rpcClient struct {
@@ -28,48 +28,70 @@ type rpcClient struct {
 }
 
 func newRpcClient(opt ...Option) Client {
+
+	// 配置项
 	opts := NewOptions(opt...)
 
+	// 线程池
 	p := pool.NewPool(
 		pool.Size(opts.PoolSize),
 		pool.TTL(opts.PoolTTL),
 		pool.Transport(opts.Transport),
 	)
 
+	// 创建对象
 	rc := &rpcClient{
 		opts: opts,
 		pool: p,
 		seq:  0,
 	}
+
+	// 更新状态
 	rc.once.Store(false)
 
+	// 类型转换
 	c := Client(rc)
 
+
 	// wrap in reverse
+	//
+	// 按逆序对 c 进行中间件封装
 	for i := len(opts.Wrappers); i > 0; i-- {
 		c = opts.Wrappers[i-1](c)
 	}
 
+	// 返回
 	return c
 }
 
+// 根据协议类型获取编码器
 func (r *rpcClient) newCodec(contentType string) (codec.NewCodec, error) {
+
+	// 自定义编码器
 	if c, ok := r.opts.Codecs[contentType]; ok {
 		return c, nil
 	}
+
+	// 框架默认支持的编码器
 	if cf, ok := DefaultCodecs[contentType]; ok {
 		return cf, nil
 	}
+
+	// 均未找到，报错
 	return nil, fmt.Errorf("Unsupported Content-Type: %s", contentType)
 }
 
 func (r *rpcClient) call(ctx context.Context, node *registry.Node, req Request, resp interface{}, opts CallOptions) error {
+
+	// 获取目标地址
 	address := node.Address
 
+	// 构造请求消息体
 	msg := &transport.Message{
 		Header: make(map[string]string),
 	}
 
+	// 填充 Headers 信息
 	md, ok := metadata.FromContext(ctx)
 	if ok {
 		for k, v := range md {
@@ -88,7 +110,6 @@ func (r *rpcClient) call(ctx context.Context, node *registry.Node, req Request, 
 	msg.Header["Content-Type"] = req.ContentType()
 	// set the accept header
 	msg.Header["Accept"] = req.ContentType()
-
 	// setup old protocol
 	cf := setupProtocol(msg, node)
 
@@ -101,27 +122,35 @@ func (r *rpcClient) call(ctx context.Context, node *registry.Node, req Request, 
 		}
 	}
 
+
+	// 指定流式协议
 	dOpts := []transport.DialOption{
 		transport.WithStream(),
 	}
 
+	// 设置连接超时
 	if opts.DialTimeout >= 0 {
 		dOpts = append(dOpts, transport.WithTimeout(opts.DialTimeout))
 	}
 
+	// 根据 address 从连接池获取连接
 	c, err := r.pool.Get(address, dOpts...)
 	if err != nil {
 		return errors.InternalServerError("go.micro.client", "connection error: %v", err)
 	}
 
+	// 请求序号 seq 自增
 	seq := atomic.LoadUint64(&r.seq)
 	atomic.AddUint64(&r.seq, 1)
+
+	//
 	codec := newRpcCodec(msg, c, cf, "")
 
 	rsp := &rpcResponse{
 		socket: c,
 		codec:  codec,
 	}
+
 
 	stream := &rpcStream{
 		id:       fmt.Sprintf("%v", seq),
@@ -136,8 +165,12 @@ func (r *rpcClient) call(ctx context.Context, node *registry.Node, req Request, 
 	// close the stream on exiting this function
 	defer stream.Close()
 
+
+
 	// wait for error response
 	ch := make(chan error, 1)
+
+
 
 	go func() {
 		defer func() {

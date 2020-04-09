@@ -5,10 +5,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/client/grpc"
-	"github.com/micro/go-micro/v2/registry"
-	pb "github.com/micro/go-micro/v2/registry/service/proto"
+	"github.com/blastbao/go-micro/client"
+	"github.com/blastbao/go-micro/client/grpc"
+	"github.com/blastbao/go-micro/registry"
+	pb "github.com/blastbao/go-micro/registry/service/proto"
 )
 
 var (

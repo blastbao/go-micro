@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/micro/go-micro/v2/api/handler"
-	proto "github.com/micro/go-micro/v2/api/proto"
-	"github.com/micro/go-micro/v2/util/ctx"
+	"github.com/blastbao/go-micro/api/handler"
+	proto "github.com/blastbao/go-micro/api/proto"
+	"github.com/blastbao/go-micro/util/ctx"
 )
 
 type event struct {

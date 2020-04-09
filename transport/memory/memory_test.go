@@ -3,7 +3,7 @@ package memory
 import (
 	"testing"
 
-	"github.com/micro/go-micro/v2/transport"
+	"github.com/blastbao/go-micro/transport"
 )
 
 func TestMemoryTransport(t *testing.T) {

@@ -11,9 +11,9 @@ import (
 
 	"github.com/go-acme/lego/v3/providers/dns/cloudflare"
 	"github.com/mholt/certmagic"
-	"github.com/micro/go-micro/v2/api/server/acme"
-	cfstore "github.com/micro/go-micro/v2/store/cloudflare"
-	"github.com/micro/go-micro/v2/sync/lock/memory"
+	"github.com/blastbao/go-micro/api/server/acme"
+	cfstore "github.com/blastbao/go-micro/store/cloudflare"
+	"github.com/blastbao/go-micro/sync/lock/memory"
 )
 
 func TestCertMagic(t *testing.T) {

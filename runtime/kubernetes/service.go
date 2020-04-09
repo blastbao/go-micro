@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"strings"
 
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/runtime"
-	"github.com/micro/go-micro/v2/util/kubernetes/api"
-	"github.com/micro/go-micro/v2/util/kubernetes/client"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/runtime"
+	"github.com/blastbao/go-micro/util/kubernetes/api"
+	"github.com/blastbao/go-micro/util/kubernetes/client"
 )
 
 type service struct {

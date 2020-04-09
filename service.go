@@ -8,17 +8,17 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/micro/go-micro/v2/auth"
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/config/cmd"
-	"github.com/micro/go-micro/v2/debug/service/handler"
-	"github.com/micro/go-micro/v2/debug/stats"
-	"github.com/micro/go-micro/v2/debug/trace"
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/plugin"
-	"github.com/micro/go-micro/v2/server"
-	"github.com/micro/go-micro/v2/util/config"
-	"github.com/micro/go-micro/v2/util/wrapper"
+	"github.com/blastbao/go-micro/auth"
+	"github.com/blastbao/go-micro/client"
+	"github.com/blastbao/go-micro/config/cmd"
+	"github.com/blastbao/go-micro/debug/service/handler"
+	"github.com/blastbao/go-micro/debug/stats"
+	"github.com/blastbao/go-micro/debug/trace"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/plugin"
+	"github.com/blastbao/go-micro/server"
+	"github.com/blastbao/go-micro/util/config"
+	"github.com/blastbao/go-micro/util/wrapper"
 )
 
 type service struct {

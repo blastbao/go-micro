@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/micro/go-micro/v2/codec/json"
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/util/addr"
+	"github.com/blastbao/go-micro/codec/json"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/registry"
+	"github.com/blastbao/go-micro/util/addr"
 	"github.com/nats-io/nats-server/v2/server"
 	nats "github.com/nats-io/nats.go"
 )

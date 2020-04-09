@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/micro/go-micro/v2/sync/lock"
+	"github.com/blastbao/go-micro/sync/lock"
 )
 
 var (

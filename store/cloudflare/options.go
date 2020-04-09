@@ -3,7 +3,7 @@ package cloudflare
 import (
 	"context"
 
-	"github.com/micro/go-micro/v2/store"
+	"github.com/blastbao/go-micro/store"
 )
 
 func getOption(ctx context.Context, key string) string {

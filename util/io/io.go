@@ -4,7 +4,7 @@ package io
 import (
 	"io"
 
-	"github.com/micro/go-micro/v2/transport"
+	"github.com/blastbao/go-micro/transport"
 )
 
 type rwc struct {

@@ -4,13 +4,13 @@ import (
 	"context"
 	"strings"
 
-	"github.com/micro/go-micro/v2/auth"
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/debug/stats"
-	"github.com/micro/go-micro/v2/debug/trace"
-	"github.com/micro/go-micro/v2/errors"
-	"github.com/micro/go-micro/v2/metadata"
-	"github.com/micro/go-micro/v2/server"
+	"github.com/blastbao/go-micro/auth"
+	"github.com/blastbao/go-micro/client"
+	"github.com/blastbao/go-micro/debug/stats"
+	"github.com/blastbao/go-micro/debug/trace"
+	"github.com/blastbao/go-micro/errors"
+	"github.com/blastbao/go-micro/metadata"
+	"github.com/blastbao/go-micro/server"
 )
 
 type clientWrapper struct {

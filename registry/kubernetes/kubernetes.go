@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/util/kubernetes/client"
+	"github.com/blastbao/go-micro/registry"
+	"github.com/blastbao/go-micro/util/kubernetes/client"
 )
 
 type kregistry struct {

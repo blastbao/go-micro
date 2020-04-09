@@ -7,12 +7,12 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/micro/go-micro/v2/broker"
-	"github.com/micro/go-micro/v2/errors"
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/metadata"
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/server"
+	"github.com/blastbao/go-micro/broker"
+	"github.com/blastbao/go-micro/errors"
+	log "github.com/blastbao/go-micro/logger"
+	"github.com/blastbao/go-micro/metadata"
+	"github.com/blastbao/go-micro/registry"
+	"github.com/blastbao/go-micro/server"
 )
 
 const (
